@@ -5,5 +5,5 @@ export const collegueMock: Collegue = {
   prenoms: 'Jean-Léo',
   email: 'jl.delabarbouille@gmail.com',
   dateDeNaissance: new Date('2020-07-29'),
-  photoUrl: '../assets/images/chat.jpg'
+  photoUrl: './assets/images/chat.jpg'
 };
