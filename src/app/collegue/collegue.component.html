@@ -4,84 +4,49 @@
       <img class="img-fluid" src="{{col.photoUrl}}">
     </div>
     <div class="col-md-8">
-      <!--
-      <table class="table mx-5">
-        <tbody>
-          <tr>
-            <th scope="row">Matricule</th>
-            <td>{{col.matricule}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Nom</th>
-            <td>{{col.nom | uppercase}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Prénoms</th>
-            <td>{{col.prenoms}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Date de Naissance</th>
-            <td>{{col.dateDeNaissance | date}}
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">Email</th>
-            <td>
-              <ng-container *ngIf="!editingOn">{{col.email}}</ng-container>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Entrez votre email" *ngIf="editingOn">
-            </td>
-          </tr>
-          <tr *ngIf="editingOn">
-            <th scope="row">Photo URL</th>
-            <td>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Matricule</div>
+            <div>{{col.matricule}}</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Nom</div>
+            <div>{{col.nom | uppercase}}</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Prénoms</div>
+            <div>{{col.prenoms}}</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Date de Naissance</div>
+            <div>{{col.dateDeNaissance | date}}</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Email</div>
+            <div *ngIf="!editingOn">{{col.email}}</div>
+            <div *ngIf="editingOn">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Entrez votre email">
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item" *ngIf="editingOn">
+          <div class="d-flex justify-content-between">
+            <div class="font-weight-bold">Photo URL</div>
+            <div>
               <input type="url" class="form-control" id="inputPhotoURL" placeholder="Entrez l'URL de l'image">
-            </td>
-          </tr>
-      </table>
-    -->
-    <ul class="list-group">
-      <li class="list-group-item">
-        <div class="d-flex justify-content-between">
-          <div class="font-weight-bold">Matricule</div>
-          <div>{{col.matricule}}</div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="d-flex justify-content-between">
-          <div class="font-weight-bold">Nom</div>
-          <div>{{col.nom | uppercase}}</div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="d-flex justify-content-between">
-          <div class="font-weight-bold">Prénoms</div>
-          <div>{{col.prenoms}}</div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="d-flex justify-content-between">
-          <div class="font-weight-bold">Date de Naissance</div>
-          <div>{{col.dateDeNaissance | date}}</div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="d-flex justify-content-between">
-          <div class="font-weight-bold">Email</div>
-          <div *ngIf="!editingOn">{{col.email}}</div>
-          <div *ngIf="editingOn">
-            <input type="email" class="form-control" id="inputEmail" placeholder="Entrez votre email">
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="list-group-item" *ngIf="editingOn">
-        <div class="d-flex justify-content-between">
-          <div class="font-weight-bold">Photo URL</div>
-          <div>
-            <input type="url" class="form-control" id="inputPhotoURL" placeholder="Entrez l'URL de l'image">
-          </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
     </div>
 
   </div>
