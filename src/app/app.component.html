@@ -1,11 +1,11 @@
 <p class="h1 text-center">Administration Collègue</p>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-6 pt-5">
+    <div class="col-md-12 col-xl-6 pt-5">
       <app-recherche-collegue-par-nom></app-recherche-collegue-par-nom>
     </div>
-    <div class="col-xs-6">
-      <app-collegue></app-collegue>
+    <div class="col-md-12 col-xl-6">
+      <app-collegue [col]="collegueMock"></app-collegue>
     </div>
   </div>
 </div>

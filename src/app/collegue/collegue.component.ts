@@ -8,7 +8,7 @@ import { Collegue } from '../models/Collegue';
   styleUrls: ['./collegue.component.css']
 })
 export class CollegueComponent implements OnInit {
-  col: Collegue = collegueMock;
+  @Input() col: Collegue;
   editingOn = false;
   constructor() { }
 

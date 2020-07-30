@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 import { matriculesMock } from '../mock/matricules.mock';
 
 @Component({
@@ -9,19 +8,16 @@ import { matriculesMock } from '../mock/matricules.mock';
 })
 export class RechercheCollegueParNomComponent implements OnInit {
 
-  mat: any[] = matriculesMock;
+  @Input() mat: any[] = matriculesMock;
   listeMat: string[] = [];
-  myGroup = new FormGroup({
-    nom: new FormControl()
- });
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  rechercheCollegue(): void{
-    const nom = this.myGroup.value.nom;
+  rechercheCollegue(saisie: HTMLInputElement): void{
+    const nom: string = saisie.value;
     this.listeMat = this.mat.filter(o => o.nom === nom).map(o => o.matricule);
   }
 }
