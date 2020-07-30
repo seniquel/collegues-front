@@ -12,7 +12,7 @@
           </tr>
           <tr>
             <th scope="row">Nom</th>
-            <td>{{col.nom}}</td>
+            <td>{{col.nom | uppercase}}</td>
           </tr>
           <tr>
             <th scope="row">Prénoms</th>
@@ -20,21 +20,33 @@
           </tr>
           <tr>
             <th scope="row">Date de Naissance</th>
-            <td>{{col.dateDeNaissance}}</td>
+            <td>{{col.dateDeNaissance | date}}
+            </td>
           </tr>
           <tr>
             <th scope="row">Email</th>
-            <td>{{col.email}}</td>
+            <td>
+              <ng-container *ngIf="!editingOn">{{col.email}}</ng-container>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Entrez votre email" *ngIf="editingOn">
+            </td>
+          </tr>
+          <tr *ngIf="editingOn">
+            <th scope="row">Photo URL</th>
+            <td>
+              <input type="url" class="form-control" id="inputPhotoURL" placeholder="Entrez l'URL de l'image">
+            </td>
           </tr>
       </table>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4 offset-md-4">
-      <button type="button" class="btn btn-primary my-5" (click)="creerCollegue()">Créer un nouveau collègue</button>
+      <button type="ngbButton" class="btn btn-primary my-5 float-left" (click)="creerCollegue()">Créer un nouveau
+        collègue</button>
     </div>
     <div class="col-md-4">
-      <button type="button" class="btn btn-primary my-5 float-right" (click)="modifierCollegue()">Modifier</button>
+      <button type="ngbButton" class="btn btn-primary my-5 float-right" (click)="modifierCollegue()" *ngIf="!editingOn">Modifier</button>
+      <button type="ngbButton" class="btn btn-primary my-5 float-right" (click)="modifierCollegue()" *ngIf="editingOn">Valider</button>
     </div>
   </div>
 </div>

@@ -9,16 +9,18 @@ import { Collegue } from '../models/Collegue';
 })
 export class CollegueComponent implements OnInit {
   col: Collegue = collegueMock;
+  editingOn = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  creerCollegue(): void{
+  creerCollegue(): void {
     console.log('Création d\'un nouveau collègue');
   }
-  modifierCollegue(): void{
+  modifierCollegue(): void {
     console.log('Modification du collègue');
+    this.editingOn = !this.editingOn;
   }
 
 }
