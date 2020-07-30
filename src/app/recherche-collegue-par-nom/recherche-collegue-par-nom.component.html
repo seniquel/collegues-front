@@ -1,0 +1,19 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form-inline">
+        <div class="form-group" [formGroup]="myGroup">
+          <label for="inputNom">Recherche par nom</label>
+          <input class="form-control ml-2 mr-5" id="inputNom" placeholder="Entrez un nom" formControlName="nom">
+        </div>
+        <input type="button" class="btn btn-primary mx-5" value="Rechercher" (click)="rechercheCollegue()"/>
+        <small>Essayez NOM1 ou NOM2</small>
+      </form>
+    </div>
+  </div>
+  <div class="row" *ngFor="let mat of listeMat">
+    <div class="col-md">
+      <p>{{mat}}</p>
+    </div>
+  </div>
+</div>

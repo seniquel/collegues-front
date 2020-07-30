@@ -1,0 +1,17 @@
+export const matriculesMock = [
+  { nom: 'NOM1', matricule: 'aJLdhRS9' },
+  { nom: 'NOM1', matricule: 'nVEn4zG9' },
+  { nom: 'NOM1', matricule: 'z3V3vJKk' },
+  { nom: 'NOM1', matricule: 'TPQQubxa' },
+  { nom: 'NOM1', matricule: 'SmL7tRdE' },
+  { nom: 'NOM1', matricule: 'krQ7vzq5' },
+  { nom: 'NOM1', matricule: 'H5uav26W' },
+  { nom: 'NOM2', matricule: '8Yfy2SxP' },
+  { nom: 'NOM2', matricule: 'Pb4eY9Bd' },
+  { nom: 'NOM2', matricule: 'DoTCu6L5' },
+  { nom: 'NOM2', matricule: 'EVLVhAbr' },
+  { nom: 'NOM2', matricule: 'XyenwnjQ}' },
+  { nom: 'NOM2', matricule: 'zP2Lg9tT' },
+  { nom: 'NOM2', matricule: 'mzjy6KRW' },
+  { nom: 'NOM2', matricule: 'u4gycBkx' },
+  { nom: 'NOM2', matricule: 'Et3XGniK' }];
