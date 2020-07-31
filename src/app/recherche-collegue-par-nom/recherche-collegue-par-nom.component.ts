@@ -8,11 +8,11 @@ import { DataService } from '../services/data.service';
 })
 export class RechercheCollegueParNomComponent implements OnInit {
 
-  listeMat: string[] = [];
-
+  listeMat: string[]
   constructor(private service: DataService) { }
 
   ngOnInit(): void {
+    this.listeMat = [];
   }
 
   rechercheCollegue(saisie: HTMLInputElement): void {

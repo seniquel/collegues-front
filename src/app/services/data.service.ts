@@ -25,7 +25,7 @@ export class DataService {
   }
 
   rechercherParNom(nom: string): Observable<string[]> {
-    return this.http.get<string[]>(`${this.URL_BACKEND}/collegues/?nom=${nom}`);
+    return this.http.get<string[]>(`${this.URL_BACKEND}/collegues?nom=${nom}`);
 
   }
 
