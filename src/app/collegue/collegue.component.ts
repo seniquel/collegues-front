@@ -8,15 +8,26 @@ import { Collegue } from '../models/Collegue';
   styleUrls: ['./collegue.component.css']
 })
 export class CollegueComponent implements OnInit {
-  col: Collegue;
+  col: Collegue = {
+    matricule: '',
+    nom: '',
+    prenoms: '',
+    email: '',
+    dateDeNaissance: null,
+    photoUrl: './assets/images/no-pic.jpg'
+  }
+  nopic = './assets/images/no-pic.jpg';
   editingOn = false;
   constructor(private service: DataService) { }
 
 
   ngOnInit(): void {
-    this.col = this.service.recupererCollegueMock();
+    // this.col = this.service.recupererCollegueMock();
     this.service.sabonnerACollegueCourant().subscribe(
-      v => { this.col = v; console.log(v); },
+      v => {
+        this.col = v;
+        this.col.photoUrl = (this.col.photoUrl != null) ? this.col.photoUrl : this.nopic;
+      },
       err => console.log(err)
     );
   }
