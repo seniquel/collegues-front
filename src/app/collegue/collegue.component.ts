@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { collegueMock } from '../mock/collegues.mock';
+import { DataService } from '../services/data.service';
 import { Collegue } from '../models/Collegue';
 
 @Component({
@@ -8,7 +8,8 @@ import { Collegue } from '../models/Collegue';
   styleUrls: ['./collegue.component.css']
 })
 export class CollegueComponent implements OnInit {
-  @Input() col: Collegue;
+  service = new DataService();
+  col = this.service.recupererCollegueCourant();
   editingOn = false;
   constructor() { }
 
