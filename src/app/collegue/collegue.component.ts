@@ -8,12 +8,17 @@ import { Collegue } from '../models/Collegue';
   styleUrls: ['./collegue.component.css']
 })
 export class CollegueComponent implements OnInit {
-  service = new DataService();
-  col = this.service.recupererCollegueCourant();
+  col: Collegue;
   editingOn = false;
-  constructor() { }
+  constructor(private service: DataService) { }
+
 
   ngOnInit(): void {
+    this.col = this.service.recupererCollegueMock();
+    this.service.sabonnerACollegueCourant().subscribe(
+      v => { this.col = v; console.log(v); },
+      err => console.log(err)
+    );
   }
 
   creerCollegue(): void {
