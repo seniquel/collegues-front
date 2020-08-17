@@ -34,8 +34,12 @@ export class DataService {
 
   }
 
+  creerCollegue(collegueCree: Collegue): Observable<Collegue>  {
+    return this.http.post<Collegue>(`${this.URL_BACKEND}/collegues`, collegueCree);
+  }
+
   // MOCKS
-  rechercherMockParNom(nom: string): string[]{
+  rechercherMockParNom(nom: string): string[] {
     return matriculesMock.filter(o => o.nom === nom).map(o => o.matricule);
   }
 

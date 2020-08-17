@@ -1,3 +1,4 @@
+import { AppComponent } from './../app.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Collegue } from '../models/Collegue';
@@ -15,10 +16,10 @@ export class CollegueComponent implements OnInit {
     email: '',
     dateDeNaissance: null,
     photoUrl: './assets/images/no-pic.jpg'
-  }
+  };
   nopic = './assets/images/no-pic.jpg';
   editingOn = false;
-  constructor(private service: DataService) { }
+  constructor(private service: DataService, private appComponent: AppComponent) { }
 
 
   ngOnInit(): void {
@@ -34,7 +35,9 @@ export class CollegueComponent implements OnInit {
 
   creerCollegue(): void {
     console.log('Création d\'un nouveau collègue');
+    this.appComponent.creationOn = !this.appComponent.creationOn;
   }
+
   modifierCollegue(): void {
     console.log('Modification du collègue');
     this.editingOn = !this.editingOn;
