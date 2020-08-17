@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
 import { collegueMock } from '../mock/collegues.mock';
 import { matriculesMock } from '../mock/matricules.mock';
 import { Collegue } from '../models/Collegue';
@@ -34,8 +34,16 @@ export class DataService {
 
   }
 
-  creerCollegue(collegueCree: Collegue): Observable<Collegue>  {
+  creerCollegue(collegueCree: Collegue): Observable<Collegue> {
     return this.http.post<Collegue>(`${this.URL_BACKEND}/collegues`, collegueCree);
+  }
+
+  modifierCollegue(collegueModifie: Collegue): Observable<Collegue> {
+    const data = {
+      email: collegueModifie.email,
+      photoUrl: collegueModifie.photoUrl
+    };
+    return this.http.patch<Collegue>(`${this.URL_BACKEND}/collegues/${collegueModifie.matricule}`, data);
   }
 
   // MOCKS

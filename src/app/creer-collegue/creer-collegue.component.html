@@ -11,7 +11,7 @@
               <div class="font-weight-bold">Nom</div>
               <div>
                 <input type="text" class="form-control" name="nom" [(ngModel)]="col.nom" #etatNom="ngModel"
-                  placeholder="Entrez le nom" required>
+                  placeholder="Entrez le nom" required minlength=2>
               </div>
             </div>
             <div *ngIf="etatNom.dirty && etatNom.invalid" class="float-right text-danger">Le nom est invalide.</div>
@@ -21,7 +21,7 @@
               <div class="font-weight-bold">Prénoms</div>
               <div>
                 <input type="text" class="form-control" name="prenoms" [(ngModel)]="col.prenoms" #etatPrenoms="ngModel"
-                  placeholder="Entrez le prénom" required>
+                  placeholder="Entrez le prénom" required minlength=2>
               </div>
             </div>
             <div *ngIf="etatPrenoms.dirty && etatPrenoms.invalid" class="float-right text-danger">Le prénom est

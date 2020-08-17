@@ -18,7 +18,6 @@ export class CreerCollegueComponent implements OnInit {
     dateDeNaissance: null,
     photoUrl: ''
   };
-  nopic = './assets/images/no-pic.jpg';
 
   constructor(private service: DataService, private appComponent: AppComponent) { }
 
@@ -30,15 +29,11 @@ export class CreerCollegueComponent implements OnInit {
   }
 
   validerCollegue(): void {
-    console.log(this.col);
-    this.service.sabonnerACollegueCourant().subscribe(
-      v => this.col = v,
-      err => console.log(err)
-    );
-    this.service.creerCollegue(this.col);
     this.service
       .creerCollegue(this.col)
-      .subscribe(v => this.col = v);
+      .subscribe(
+        err => console.log(err));
+    this.appComponent.creationOn = !this.appComponent.creationOn;
   }
 
 }

@@ -43,4 +43,12 @@ export class CollegueComponent implements OnInit {
     this.editingOn = !this.editingOn;
   }
 
+  validerModifCollegue(): void {
+    this.editingOn = !this.editingOn;
+    this.service
+      .modifierCollegue(this.col)
+      .subscribe(
+        err => console.log(err));
+  }
+
 }
