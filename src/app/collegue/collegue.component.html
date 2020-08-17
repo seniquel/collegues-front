@@ -47,7 +47,7 @@
               <div class="font-weight-bold">Photo URL</div>
               <div>
                 <input type="url" class="form-control" name="photoUrl" [(ngModel)]="col.photoUrl" #etatUrl="ngModel"
-                  placeholder="Entrez l'URL de l'image" required minlength=7>
+                  placeholder="Entrez l'URL de l'image" required minlength=7 appUrlValidator>
               </div>
             </div>
             <div *ngIf="etatUrl.dirty && etatUrl.invalid" class="float-right text-danger">Le lien est invalide.</div>
