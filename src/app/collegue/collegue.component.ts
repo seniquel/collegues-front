@@ -18,7 +18,6 @@ export class CollegueComponent implements OnInit {
     dateDeNaissance: null,
     photoUrl: './assets/images/no-pic.jpg'
   };
-  nopic = './assets/images/no-pic.jpg';
   editingOn = false;
   constructor(private service: DataService, private accueil: AccueilComponent) { }
 
@@ -28,7 +27,6 @@ export class CollegueComponent implements OnInit {
     this.service.sabonnerACollegueCourant().subscribe(
       v => {
         this.col = v;
-        this.col.photoUrl = (this.col.photoUrl != null) ? this.col.photoUrl : this.nopic;
       },
       err => console.log(err)
     );

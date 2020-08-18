@@ -11,13 +11,13 @@ import { CreerCollegueComponent } from './creer-collegue/creer-collegue.componen
 import { UrlValidatorDirective } from './validators/url-validator.directive';
 import { MenuComponent } from './menu/menu.component';
 import { AproposComponent } from './apropos/apropos.component';
-import { GallerieComponent } from './gallerie/gallerie.component';
+import { GalerieComponent } from './galerie/galerie.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 
 const ROUTES: Routes = [
   { path: 'accueil', component: AccueilComponent},
-  { path: 'gallerie', component: GallerieComponent},
+  { path: 'galerie', component: GalerieComponent},
   { path: 'apropos', component: AproposComponent},
   { path: '', pathMatch: 'full', redirectTo: '/accueil' },
 ];
@@ -30,7 +30,7 @@ const ROUTES: Routes = [
     CreerCollegueComponent,
     UrlValidatorDirective,
     MenuComponent,
-    GallerieComponent,
+    GalerieComponent,
     AproposComponent,
     AccueilComponent
   ],

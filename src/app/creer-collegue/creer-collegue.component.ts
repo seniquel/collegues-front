@@ -2,7 +2,6 @@ import { AccueilComponent } from './../accueil/accueil.component';
 import { Component, OnInit } from '@angular/core';
 import { Collegue } from '../models/Collegue';
 import { DataService } from '../services/data.service';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-creer-collegue',

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 my-5" *ngFor="let col of listeGalerie">
+      <div class="card">
+        <img class="card-img-top" src="{{col.photoUrl}}" alt="Image not found" onerror="this.src='./assets/images/no-pic.jpg';">
+        <div class="card-body">
+          <p class="card-text">{{col.matricule}}</p>
+          <a href="galerie/{{col.matricule}}" class="stretched-link" (click)="select(col.matricule)"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

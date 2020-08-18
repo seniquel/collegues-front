@@ -46,6 +46,10 @@ export class DataService {
     return this.http.patch<Collegue>(`${this.URL_BACKEND}/collegues/${collegueModifie.matricule}`, data);
   }
 
+  recupererGalerie(): Observable<Collegue[]> {
+    return this.http.get<Collegue[]>(`${this.URL_BACKEND}/collegues/photos`);
+  }
+
   // MOCKS
   rechercherMockParNom(nom: string): string[] {
     return matriculesMock.filter(o => o.nom === nom).map(o => o.matricule);
