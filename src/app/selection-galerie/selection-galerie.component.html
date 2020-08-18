@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4 offset-4 my-5">
+      <div class="card">
+        <img class="card-img-top" src="{{col.photoUrl}}" alt="Image not found"
+          onerror="this.src='./assets/images/no-pic.jpg';">
+        <div class="card-body">
+          <h5 class="card-title">{{col.prenoms}} {{col.nom | uppercase}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <div class="font-weight-bold">Matricule</div>
+              <div>{{col.matricule}}</div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <div class="font-weight-bold">Nom</div>
+              <div>{{col.nom | uppercase}}</div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <div class="font-weight-bold">Prénoms</div>
+              <div>{{col.prenoms}}</div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <div class="font-weight-bold">Date de Naissance</div>
+              <div>{{col.dateDeNaissance | date}}</div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <div class="font-weight-bold">Email</div>
+              <div>{{col.email}}</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

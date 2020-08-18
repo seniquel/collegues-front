@@ -26,12 +26,14 @@ export class DataService {
 
   rechercherParNom(nom: string): Observable<string[]> {
     return this.http.get<string[]>(`${this.URL_BACKEND}/collegues?nom=${nom}`);
+  }
 
+  recherherParMatricule(matricule: string): Observable<Collegue> {
+    return this.http.get<Collegue>(`${this.URL_BACKEND}/collegues/${matricule}`);
   }
 
   recupererCollegueCourant(matricule: string): Observable<Collegue> {
     return this.http.get<Collegue>(`${this.URL_BACKEND}/collegues/${matricule}`);
-
   }
 
   creerCollegue(collegueCree: Collegue): Observable<Collegue> {

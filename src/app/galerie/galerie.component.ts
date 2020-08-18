@@ -20,13 +20,4 @@ export class GalerieComponent implements OnInit {
       () => { }
     );
   }
-
-  select(matSelect: string): void {
-    this.service.recupererCollegueCourant(matSelect).subscribe(
-      collegue => this.service.selectionner(collegue),
-      err => console.log(err),
-      () => { }
-    );
-    // this.service.selectionner(collegue);
-  }
 }
