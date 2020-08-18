@@ -1,3 +1,4 @@
+import { AccueilComponent } from './../accueil/accueil.component';
 import { AppComponent } from './../app.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../services/data.service';
@@ -19,7 +20,7 @@ export class CollegueComponent implements OnInit {
   };
   nopic = './assets/images/no-pic.jpg';
   editingOn = false;
-  constructor(private service: DataService, private appComponent: AppComponent) { }
+  constructor(private service: DataService, private accueil: AccueilComponent) { }
 
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ export class CollegueComponent implements OnInit {
 
   creerCollegue(): void {
     console.log('Création d\'un nouveau collègue');
-    this.appComponent.creationOn = !this.appComponent.creationOn;
+    this.accueil.creationOn = !this.accueil.creationOn;
   }
 
   modifierCollegue(): void {

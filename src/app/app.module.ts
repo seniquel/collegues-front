@@ -9,6 +9,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CreerCollegueComponent } from './creer-collegue/creer-collegue.component';
 import { UrlValidatorDirective } from './validators/url-validator.directive';
+import { MenuComponent } from './menu/menu.component';
+import { AproposComponent } from './apropos/apropos.component';
+import { GallerieComponent } from './gallerie/gallerie.component';
+import { Route, RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './accueil/accueil.component';
+
+const ROUTES: Routes = [
+  { path: 'accueil', component: AccueilComponent},
+  { path: 'gallerie', component: GallerieComponent},
+  { path: 'apropos', component: AproposComponent},
+  { path: '', pathMatch: 'full', redirectTo: '/accueil' },
+];
 
 @NgModule({
   declarations: [
@@ -16,13 +28,18 @@ import { UrlValidatorDirective } from './validators/url-validator.directive';
     CollegueComponent,
     RechercheCollegueParNomComponent,
     CreerCollegueComponent,
-    UrlValidatorDirective
+    UrlValidatorDirective,
+    MenuComponent,
+    GallerieComponent,
+    AproposComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

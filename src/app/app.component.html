@@ -1,12 +1,7 @@
-<p class="h1 text-center">Administration Collègue</p>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12 col-xl-6 pt-5">
-      <app-recherche-collegue-par-nom></app-recherche-collegue-par-nom>
-    </div>
-    <div class="col-md-12 col-xl-6">
-      <app-collegue *ngIf="!creationOn"></app-collegue>
-      <app-creer-collegue *ngIf="creationOn"></app-creer-collegue>
-    </div>
-  </div>
-</div>
+<header>
+  <p class="h1 text-center">Administration Collègue</p>
+  <app-menu></app-menu>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

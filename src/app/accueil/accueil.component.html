@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 col-xl-6 pt-5">
+      <app-recherche-collegue-par-nom></app-recherche-collegue-par-nom>
+    </div>
+    <div class="col-md-12 col-xl-6">
+      <app-collegue *ngIf="!creationOn"></app-collegue>
+      <app-creer-collegue *ngIf="creationOn"></app-creer-collegue>
+    </div>
+  </div>
+</div>

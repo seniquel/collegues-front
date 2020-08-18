@@ -1,3 +1,4 @@
+import { AccueilComponent } from './../accueil/accueil.component';
 import { Component, OnInit } from '@angular/core';
 import { Collegue } from '../models/Collegue';
 import { DataService } from '../services/data.service';
@@ -19,13 +20,13 @@ export class CreerCollegueComponent implements OnInit {
     photoUrl: ''
   };
 
-  constructor(private service: DataService, private appComponent: AppComponent) { }
+  constructor(private service: DataService, private accueil: AccueilComponent) { }
 
   ngOnInit(): void {
   }
 
   annuler(): void {
-    this.appComponent.creationOn = !this.appComponent.creationOn;
+    this.accueil.creationOn = !this.accueil.creationOn;
   }
 
   validerCollegue(): void {
@@ -33,7 +34,7 @@ export class CreerCollegueComponent implements OnInit {
       .creerCollegue(this.col)
       .subscribe(
         err => console.log(err));
-    this.appComponent.creationOn = !this.appComponent.creationOn;
+    this.accueil.creationOn = !this.accueil.creationOn;
   }
 
 }
