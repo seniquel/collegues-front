@@ -2,9 +2,11 @@ import { Injectable, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/co
 import { collegueMock } from '../mock/collegues.mock';
 import { matriculesMock } from '../mock/matricules.mock';
 import { Collegue } from '../models/Collegue';
+import { Note } from '../models/Note';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Subject, Observable, pipe } from 'rxjs';
+import { stringify } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +52,18 @@ export class DataService {
 
   recupererGalerie(): Observable<Collegue[]> {
     return this.http.get<Collegue[]>(`${this.URL_BACKEND}/collegues/photos`);
+  }
+
+  recupererNotes(matricule: string): Observable<Note[]> {
+    return this.http.get<Note[]>(`${this.URL_BACKEND}/collegues/${matricule}/notes`);
+  }
+
+  ajouterNote(matricule: string, message: string): Observable<Note> {
+    return this.http.patch<Note>(`${this.URL_BACKEND}/collegues/${matricule}/notes`, message);
+  }
+
+  supprimerNote(matricule: string, id: number): Observable<boolean> {
+    return this.http.patch<boolean>(`${this.URL_BACKEND}/collegues/${matricule}/notes/delete`, id);
   }
 
   // MOCKS
